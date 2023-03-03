@@ -1,6 +1,6 @@
 cmake_minimum_required (VERSION 3.8)
 project (decnum)
-add_library (decnum SHARED
+add_library (decnum STATIC
   decNumber-icu-368/decContext.c
   decNumber-icu-368/decNumber.c
   decNumber-icu-368/decimal32.c
@@ -14,5 +14,3 @@ add_library (decnum SHARED
 set_property (TARGET decnum APPEND
   PROPERTY COMPILE_FLAGS -fPIC
 )
-include (GNUInstallDirs)
-install (TARGETS decnum DESTINATION ${CMAKE_INSTALL_LIBDIR})
